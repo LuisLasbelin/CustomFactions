@@ -18,3 +18,15 @@ commands:
     description: Invite a player to your faction
     usage: /invitePlayer
     permission: minecraft.command.help
+  factionMembers:
+    description: Get all members of a faction
+    usage: /factionMembers
+    permission: minecraft.command.help
+  banishPlayer:
+    description: Banish a player from your faction
+    usage: /banishPlayer
+    permission: minecraft.command.help
+  claimChunk:
+    description: Claim a chunk for your faction
+    usage: /claimChunk
+    permission: minecraft.command.help

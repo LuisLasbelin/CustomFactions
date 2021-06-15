@@ -32,6 +32,7 @@ public class CommandCreateFaction implements CommandExecutor {
                     config.set("factions." + args[0] + ".members", list);
 
                     Bukkit.broadcastMessage("The faction " + args[0] + " has been founded! Its leader is now " + sender.getName());
+                    plugin.saveConfig();
                     return true;
                 }
                 sender.sendMessage(args[0] + " already exists!");

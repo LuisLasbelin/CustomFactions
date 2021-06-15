@@ -6,11 +6,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class CommandInvitePlayer implements CommandExecutor {
     @Override
@@ -41,6 +40,12 @@ public class CommandInvitePlayer implements CommandExecutor {
                             invitedList.add(args[1]);
                             config.set("factions." + args[0] + ".invited", invitedList);
                             sender.sendMessage(args[1] + " invited to " + args[0]);
+                            if(Objects.requireNonNull(Bukkit.getPlayer(args[1])).isOnline()) {
+                                Player player = Bukkit.getPlayer(args[1]);
+                                assert player != null;
+                                player.sendMessage("You were invited to " + args[0] + ". Write /invitation " + args[0] + " yes/no, to accept/decline the offer.");
+                            }
+                            plugin.saveConfig();
                             return true;
                         }
                         // Player is not online

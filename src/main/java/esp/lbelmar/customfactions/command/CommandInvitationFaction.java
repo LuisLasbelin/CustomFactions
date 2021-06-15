@@ -32,12 +32,14 @@ public class CommandInvitationFaction implements CommandExecutor {
                                     memberList.add(sender.getName());
                                     config.set("factions." + args[0] + ".members", memberList);
                                     sender.sendMessage("You are now a member of " + args[0]);
+                                    plugin.saveConfig();
                                     return true;
                                 }
                                 if(args[1].equals("no")) {
                                     invitedList.remove(sender.getName());
                                     config.set("factions." + args[0] + ".invited", invitedList);
                                     sender.sendMessage("You have dismissed the invitation from " + args[0]);
+                                    plugin.saveConfig();
                                     return true;
                                 }
                             }

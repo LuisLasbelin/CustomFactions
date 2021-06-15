@@ -34,8 +34,9 @@ public class CommandBanishPlayer implements CommandExecutor {
                                 if(Objects.requireNonNull(Bukkit.getPlayer(args[1])).isOnline()) {
                                     Player player = Bukkit.getPlayer(args[1]);
                                     assert player != null;
-                                    player.sendMessage("You were expulsed from " + args[0]);
+                                    player.sendMessage("You were banished from " + args[0]);
                                 }
+                                plugin.saveConfig();
                                 return true;
                             }
                         }
@@ -50,6 +51,6 @@ public class CommandBanishPlayer implements CommandExecutor {
         }
 
         sender.sendMessage("Syntax error: /invitePlayer <faction> <player>");
-        return false;
+        return true;
     }
 }
