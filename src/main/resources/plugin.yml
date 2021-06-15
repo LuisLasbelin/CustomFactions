@@ -4,3 +4,17 @@ main: esp.lbelmar.customfactions.CustomFactions
 api-version: 1.17
 authors: [ LuisBelloch ]
 description: Configure factions, chests access and more
+
+commands:
+  createFaction:
+    description: Create a new faction
+    usage: /createFaction
+    permission: minecraft.command.help
+  invitation:
+    description: Accept of deny an invitation to a faction
+    usage: /invitation
+    permission: minecraft.command.help
+  invitePlayer:
+    description: Invite a player to your faction
+    usage: /invitePlayer
+    permission: minecraft.command.help
