@@ -1,0 +1,6 @@
+name: CustomFactions
+version: ${project.version}
+main: esp.lbelmar.customfactions.CustomFactions
+api-version: 1.17
+authors: [ LuisBelloch ]
+description: Configure factions, chests access and more
