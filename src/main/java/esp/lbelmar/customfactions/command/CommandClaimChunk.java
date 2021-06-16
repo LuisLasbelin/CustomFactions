@@ -26,7 +26,7 @@ public class CommandClaimChunk implements CommandExecutor {
                 // Only if the player is the admin of the faction claiming
                 if(Objects.requireNonNull(config.getString("factions." + args[0] + ".admin")).equals(sender.getName())) {
                     // Get current chunk location
-                    String currentChunk = String.valueOf(player.getLocation().getChunk().getX());
+                    String currentChunk = String.valueOf(player.getLocation().getChunk().getX()) + "," + String.valueOf(player.getLocation().getChunk().getZ());
                     // Check if it is not claimed
                     Set<String> factions = Objects.requireNonNull(config.getConfigurationSection("factions")).getKeys(false);
                     for (String faction : factions) {

@@ -33,7 +33,7 @@ public class CheckFactionChest implements Listener {
             return;
         }
         FileConfiguration config = plugin.getConfig();
-        String currentChunk = String.valueOf(e.getClickedBlock().getLocation().getChunk().getX());
+        String currentChunk = String.valueOf(e.getPlayer().getLocation().getChunk().getX()) + "," + String.valueOf(e.getPlayer().getLocation().getChunk().getZ());
         // Check if it is not claimed
         Set<String> factions = Objects.requireNonNull(config.getConfigurationSection("factions")).getKeys(false);
         for (String faction : factions) {
@@ -58,7 +58,8 @@ public class CheckFactionChest implements Listener {
     public void onBlockBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
         FileConfiguration config = plugin.getConfig();
-        String currentChunk = String.valueOf(e.getBlock().getLocation().getChunk().getX());
+        // Get current chunk location
+        String currentChunk = String.valueOf(e.getBlock().getLocation().getChunk().getX()) + "," + String.valueOf(e.getBlock().getLocation().getChunk().getZ());
         // Check if it is not claimed
         Set<String> factions = Objects.requireNonNull(config.getConfigurationSection("factions")).getKeys(false);
         for (String faction : factions) {
