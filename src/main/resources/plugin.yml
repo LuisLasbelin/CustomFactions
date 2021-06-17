@@ -30,3 +30,7 @@ commands:
     description: Claim a chunk for your faction
     usage: /claimChunk
     permission: minecraft.command.help
+  msgFaction:
+    description: Send a message to all your faction
+    usage: /msgFaction
+    permission: minecraft.command.help
