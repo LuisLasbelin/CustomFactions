@@ -23,9 +23,7 @@ public class EnterExitFactionChunk implements Listener {
 
     @EventHandler
     public void PlayerMove(PlayerMoveEvent e){
-        if (e.getFrom().getChunk().equals(Objects.requireNonNull(e.getTo()).getChunk())) {
-            // chunk are equal
-        } else {
+        if (!e.getFrom().getChunk().equals(Objects.requireNonNull(e.getTo()).getChunk())) {
             // chunk are not equal
             Player player = e.getPlayer();
             FileConfiguration config = plugin.getConfig();
