@@ -33,7 +33,7 @@ public class CommandClaimChunk implements CommandExecutor {
                         List<String> chunkList = config.getStringList("factions." + faction + ".chunks");
                         for (String chunk : chunkList) {
                             if(chunk.equals(currentChunk)) {
-                                sender.sendMessage("This chunk is property of " + factions);
+                                sender.sendMessage("This chunk is property of " + faction);
                                 return true;
                             }
                         }
